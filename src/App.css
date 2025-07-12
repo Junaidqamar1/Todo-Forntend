@@ -1,0 +1,494 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Background: #CADCFC;
+  --Text: #00246B;
+  --Accent: #F96167;
+  --InputBG: #ffffff;
+  --InputBorder: #d1d5db;
+  --Shadow: rgba(0, 0, 0, 0.1);
+  --background2:#E7E8D1;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--Background);
+  color: var(--Text);
+}
+
+.login {
+  width: 100%;
+  max-width: 400px;
+  margin: 10vh auto;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: var(--background2);
+  box-shadow: 0 8px 20px var(--Shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--Text);
+}
+
+.login form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login form input {
+  padding: 12px 15px;
+  border: 1px solid var(--InputBorder);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login form input:focus {
+  outline: none;
+  border-color: var(--Accent);
+  box-shadow: 0 0 5px var(--Accent);
+}
+
+.login form button[type="submit"] {
+  padding: 12px;
+  background-color: var(--Accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #d94c55;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--Text);
+}
+
+
+
+
+
+
+.register {
+  width: 100%;
+  max-width: 400px;
+  margin: 10vh auto;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: var(--background2);
+  box-shadow: 0 8px 20px var(--Shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--Text);
+}
+
+.register form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register form input {
+  padding: 12px 15px;
+  border: 1px solid var(--InputBorder);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.register form input:focus {
+  outline: none;
+  border-color: var(--Accent);
+  box-shadow: 0 0 5px var(--Accent);
+}
+
+.register button[type="submit"] {
+  padding: 12px;
+  background-color: var(--Accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register button[type="submit"]:hover {
+  background-color: #d94c55;
+}
+
+.register p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--Text);
+}
+
+
+
+
+.taskform {
+  position: absolute;
+  width: 100%;
+  top: 10vh;
+  max-width: 500px;
+  margin: 8vh auto;
+  left: 30%;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: var(--background2);
+  box-shadow: 0 8px 20px var(--Shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--Text);
+  transition: all 1.5s;
+  z-index: 1000;
+}
+
+.taskform h3 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.taskform input,
+.taskform select {
+  padding: 12px 15px;
+  border: 1px solid var(--InputBorder);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--Background);
+  transition: border-color 0.3s ease;
+}
+
+.taskform input:focus,
+.taskform select:focus {
+  outline: none;
+  border-color: var(--Accent);
+  box-shadow: 0 0 5px var(--Accent);
+}
+
+.taskform button[type="submit"] {
+  padding: 12px;
+  background-color: var(--Accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.taskform button[type="submit"]:hover {
+  background-color: #d94c55;
+}
+
+
+.board{
+  height: 100vh;
+}
+.cret-form{
+  
+  width: 90%;
+  height: 10vh;
+  background-color: var(--background2);
+  margin-top: 20px;
+  margin-left: 5%;
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.cret-form h3{
+  font-size: 1.5rem;
+}
+.cret-form button{
+  width: 100px;
+  border: none;
+  background-color: var(--Accent);
+  color: black;
+  height: 90%;
+  border-radius: 30px;
+  margin: 10px;
+  font-size: medium;
+  /* font-weight: 400; */
+  box-shadow: 2px 2px 2px var(--Text) ;
+  transition: all .5s;
+}
+.cret-form button:hover{
+   /* background-color: red; */
+  box-shadow: 2px 2px 2px var(--white) ;
+
+}
+
+.board h1{
+  text-align: center;
+  margin: 10px;
+}
+.koban-board{
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+ 
+  justify-self: center;
+}
+.table{
+  background-color: var(--background2);
+  width: 100%;
+  border: 2px solid black;
+/* margin: 5px; */
+/* border-radius: 30px; */
+/* position: ; */
+  gap: 10px;
+  height: 70vh;
+  /* overflow-y: scroll; */
+  display: flex;
+  flex-direction: column;
+
+}
+.collt{
+  overflow-y: scroll;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.table h3{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.card-front strong{
+  text-align: center;
+  color: black;
+}
+.task-card button{
+  width: 40%;
+  background-color: red;
+  border: none;
+  height: 30px;
+  margin: 5px;
+  border-radius: 20px;
+}
+.task-card .smrt{
+  width: 50%;
+  background: linear-gradient(90deg, green, yellow);
+}
+
+
+
+.task-card {
+  width: 90%;
+  height: 180px;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  /* background-color:#cfd8ea; */
+   justify-self: center;
+   justify-content: center;
+margin-left: 5%;
+  cursor: pointer;
+   flex-shrink: 0; 
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position:relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.task-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position:absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  /* background: white; */
+  
+  border-radius: 10px;
+  border: 2px solid black;
+  border-bottom: 4px solid black;
+}
+
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  /* align-items: center; */
+  /* background-color: #e0f7fa; */
+
+}
+.card-front {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.card-back {
+  background-color: #ffe0b2;
+  color: #e65100;
+  overflow-x: scroll;
+}
+
+
+.card-back{
+
+}
+.card-front strong{
+  text-align: center;
+  color: black;
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+/* ✅ Hide scrollbar for Chrome, Safari, and Opera */
+.activity {
+  width: 80vw;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.3); /* Light black transparency */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.head h4 {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.head button {
+  background-color: var(--Accent);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.head button:hover {
+  background-color: #d94c55;
+}
+
+.activity ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity li {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-left: 3px solid var(--Accent);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.activity li strong {
+  color: #fff;
+}
+
+.activity li small {
+  display: block;
+  color: #ccc;
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+@media (max-width:450px) {
+  .task-card .smrt{
+    width: 100%;
+  }
+  .task-card button{
+    font-size: x-small;
+    /* font-size: smaller; */
+    width: 80%;
+  }
+  .card-back p{
+    font-size: x-small;
+  }
+    .activity {
+    width: 95vw;
+    padding: 14px;
+    max-height: 250px;
+    font-size: 0.9rem;
+  }
+
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .head h4 {
+    font-size: 1rem;
+  }
+
+  .head button {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .activity li {
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+
+  .activity li small {
+    font-size: 0.75rem;
+  }
+}
