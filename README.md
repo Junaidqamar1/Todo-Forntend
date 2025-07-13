@@ -35,6 +35,55 @@ A real-time collaborative task management app built with React, Node.js, Socket.
 
 ---
 
+## Smart Assign (📌 Key Feature)
+
+-When you click "🧠 Smart Assign", the system:
+
+    Fetches all users.
+
+    Counts how many tasks each user currently has.
+
+    Assigns the task to the user with the least workload.
+
+    Updates the task in the DB and syncs in real-time via WebSocket.
+
+🔄 This helps distribute tasks fairly and automatically.
+---
+
+## Conflict Handling (📌 Key Feature)
+
+Conflicts can occur when two users try to update the same task simultaneously. Here’s how we manage it:
+
+    Each task stores a lastModified timestamp.
+
+    When updating, client sends the current version with the timestamp.
+
+    Server checks if the timestamp is outdated.
+
+    If outdated, server sends 409 Conflict response with both:
+
+        currentTask (latest in DB)
+
+        attemptedUpdate (from client)
+
+    The client prompts the user to confirm overwrite or cancel.
+
+✅ This ensures no accidental overwrites happen in collaboration.
+## Real-Time Collaboration
+
+All updates (task creation, status updates, deletions) are broadcast using Socket.IO:
+
+    task-created
+
+    task-updated
+
+    task-deleted
+
+    new-action (for activity log)
+
+Each user sees changes instantly without refreshing.
+
+
 ## 🚀 Setup and Installation
 
 ### 🔧 Backend (Node + Express)
