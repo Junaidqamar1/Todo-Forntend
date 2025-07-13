@@ -13,7 +13,7 @@ const TaskForm = ({ onTaskCreated }) => {
 
   const [users, setUsers] = useState([]);
 
-  // Fetch users to assign
+  
   useEffect(() => {
     API.get("/auth/all").then((res) => setUsers(res.data));
   }, []);
@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   try {
     const res = await API.post("/tasks", form);
-    // socket.emit("task-created", res.data); <-- ❌ Remove this
+    
     setForm({ title: "", description: "", status: "Todo", priority: "Low", assignedTo: "" });
   } catch (err) {
     alert("Error creating task");

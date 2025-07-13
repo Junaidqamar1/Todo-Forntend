@@ -10,7 +10,7 @@ const ActivityLog = () => {
     fetchLogs();
 
     socket.on("new-action", (action) => {
-      setLogs((prev) => [action, ...prev.slice(0, 19)]); // Keep max 20 logs
+      setLogs((prev) => [action, ...prev.slice(0, 19)]); 
     });
 
     return () => {

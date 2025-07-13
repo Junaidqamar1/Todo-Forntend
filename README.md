@@ -6,9 +6,9 @@ A real-time collaborative task management app built with React, Node.js, Socket.
 
 ## 🌐 Live Demo
 
-- 🔗 **Frontend (Netlify)**: [View Live Site](https://your-netlify-url.netlify.app)
-- 🔗 **Backend (Railway)**: [API Base URL](https://your-backend-url.up.railway.app)
-- 🎥 **Demo Video**: [Watch Here](https://your-demo-video-link.com)
+- 🔗 **Frontend (Netlify)**: [View Live Site](https://todo-webalar.netlify.app/)
+- 🔗 **Backend (Railway)**: [API Base URL](https://todo-backend-production-6db3.up.railway.app/api)
+- 🎥 **Demo Video**: [Watch Here](https://drive.google.com/file/d/1CE9pxNiqwrxzwaol1hPDxd0_R-e9hVmP/view?usp=sharing)
 
 ---
 
