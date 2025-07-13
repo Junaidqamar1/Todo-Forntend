@@ -7,7 +7,7 @@ A real-time collaborative task management app built with React, Node.js, Socket.
 ## 🌐 Live Demo
 
 - 🔗 **Frontend (Netlify)**: [View Live Site](https://todo-webalar.netlify.app/)
-- 🔗 **Backend (Railway)**: [API Base URL](https://todo-backend-production-6db3.up.railway.app/api)
+- 🔗 **Backend API (Railway)**: [API Base URL](https://todo-backend-production-6db3.up.railway.app/api)
 - 🎥 **Demo Video**: [Watch Here](https://drive.google.com/file/d/1CE9pxNiqwrxzwaol1hPDxd0_R-e9hVmP/view?usp=sharing)
 
 ---
@@ -26,63 +26,55 @@ A real-time collaborative task management app built with React, Node.js, Socket.
 
 - 🧑‍💼 User Registration & Login
 - 📝 Create, Update, Delete tasks
-- 🔄 Real-time syncing of tasks across users
+- 🔄 Real-time syncing of tasks across all users
 - ⚔️ Conflict Detection & Resolution
 - 🧠 Smart Auto Assignment (assigns task to user with least workload)
-- 📜 Activity Log
-- 📤 Drag & Drop task status change (Todo, In Progress, Done)
+- 📜 Activity Log for tracking actions
+- 📤 Drag & Drop task status (Todo, In Progress, Done)
 - ✅ Fully responsive design
 
 ---
 
-## Smart Assign (📌 Key Feature)
+## 🧠 Smart Assign (Key Feature)
 
--When you click "🧠 Smart Assign", the system:
+When you click **"🧠 Smart Assign"**, the system:
 
-    Fetches all users.
+1. Fetches all users
+2. Counts how many tasks each user currently has
+3. Assigns the task to the user with the **least workload**
+4. Updates the task in the DB and syncs changes in real time
 
-    Counts how many tasks each user currently has.
+🔁 This helps distribute tasks fairly and automatically.
 
-    Assigns the task to the user with the least workload.
-
-    Updates the task in the DB and syncs in real-time via WebSocket.
-
-🔄 This helps distribute tasks fairly and automatically.
 ---
 
-## Conflict Handling (📌 Key Feature)
+## ⚔️ Conflict Handling (Key Feature)
 
-Conflicts can occur when two users try to update the same task simultaneously. Here’s how we manage it:
+When two users update the **same task at the same time**, we:
 
-    Each task stores a lastModified timestamp.
+1. Store a `lastModified` timestamp in each task
+2. When a task is updated, compare timestamps
+3. If conflict detected:
+   - Respond with HTTP `409 Conflict`
+   - Return both `currentTask` and `attemptedUpdate`
+4. Prompt user: "Overwrite or Cancel?"
 
-    When updating, client sends the current version with the timestamp.
+✅ Ensures **no data loss or overwrites**.
 
-    Server checks if the timestamp is outdated.
+---
 
-    If outdated, server sends 409 Conflict response with both:
+## 🔄 Real-Time Collaboration
 
-        currentTask (latest in DB)
+All updates are broadcast with Socket.IO events:
 
-        attemptedUpdate (from client)
+- `task-created`
+- `task-updated`
+- `task-deleted`
+- `new-action` (for activity log)
 
-    The client prompts the user to confirm overwrite or cancel.
+🚀 Users see changes instantly without refreshing.
 
-✅ This ensures no accidental overwrites happen in collaboration.
-## Real-Time Collaboration
-
-All updates (task creation, status updates, deletions) are broadcast using Socket.IO:
-
-    task-created
-
-    task-updated
-
-    task-deleted
-
-    new-action (for activity log)
-
-Each user sees changes instantly without refreshing.
-
+---
 
 ## 🚀 Setup and Installation
 
