@@ -4,10 +4,13 @@ import socket from "../socket";
 import TaskForm from "./TaskForm";
 import ActivityLog from "./ActivityLog";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Board = () => {
+  const navigate = useNavigate();
+
   const [flippedCards, setFlippedCards] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [form, setForm] = useState(false)
@@ -122,6 +125,12 @@ const Board = () => {
       }
     }
   };
+  function handleLogout() {
+  localStorage.removeItem("token");
+ 
+    window.location.reload();
+
+}
 
   const onDragEnd = async (result) => {
     const { source, destination, draggableId } = result;
@@ -199,6 +208,7 @@ const Board = () => {
         </div>
       </DragDropContext>
       <ActivityLog/>
+      <button onClick={handleLogout} className="logout" >Logout</button>
     </div>
   );
 };

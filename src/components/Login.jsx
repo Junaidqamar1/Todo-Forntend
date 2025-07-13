@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import API from "../api";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Login = () => {
+
+
   const [form, setForm] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
 
@@ -11,12 +15,13 @@ const Login = () => {
       const res = await API.post("/auth/login", form);
       setMessage("Login successful!");
 
-      // Save user + token in localStorage (or context)
+     
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      // Optionally redirect to board
-      window.location.href = "/board"; // later we'll route properly
+      
+     window.location.reload();
+
     } catch (err) {
       setMessage(err.response?.data?.message || "Login failed");
     }
@@ -33,6 +38,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       <p>{message}</p>
+      <p>crete account</p><Link to="/register">Register</Link>
     </div>
   );
 };
